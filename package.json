@@ -1,0 +1,69 @@
+{
+  "name": "@careful/armstrong-legacy",
+  "version": "0.0.1-alpha.671",
+  "description": "Rocketmakers Armstrong library of React components",
+  "main": "./dist/index.js",
+  "style": "./dist/style.scss",
+  "typings": "./dist/index.d.ts",
+  "scripts": {
+    "test": "npm run build-ts && mocha --reporter spec",
+    "build-ts": "tsc --pretty -p source -d",
+    "build-scss": "node sass_concat.js",
+    "build": "npm run build-ts && npm run build-scss",
+    "watch-scss": "node sass_copy.js",
+    "watch-ts": "tsc -p source -d -w",
+    "watch": "parallelshell -v \"npm run watch-ts\" \"npm run watch-scss\"",
+    "lint": "tslint -c tslint.json 'source/**/*.ts{,x}'",
+    "prepublishOnly": "npm run build"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rocketmakers/armstrong-react.git"
+  },
+  "keywords": [
+    "typescript",
+    "React",
+    "sass"
+  ],
+  "author": "developers@rocketmakers.com",
+  "license": "MIT",
+  "dependencies": {
+    "moment": "2.24.0",
+    "prop-types": "15.7.2",
+    "underscore": "1.10.2"
+  },
+  "peerDependencies": {
+    "@types/react": "^16.9.23",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@types/mocha": "7.0.2",
+    "@types/node": "13.13.2",
+    "@types/react": "16.9.34",
+    "@types/react-dom": "16.9.6",
+    "@types/underscore": "1.9.4",
+    "chokidar": "3.3.1",
+    "import-resolve": "0.5.1",
+    "mocha": "7.1.1",
+    "parallelshell": "3.0.2",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-hooks-testing-library": "0.6.0",
+    "react-test-renderer": "16.13.1",
+    "ts-loader": "7.0.1",
+    "tslib": "1.11.1",
+    "tslint": "6.1.1",
+    "typescript": "3.8.3"
+  },
+  "bugs": {
+    "url": "https://github.com/Rocketmakers/armstrong-react/issues"
+  },
+  "homepage": "https://github.com/Rocketmakers/armstrong-react#readme",
+  "directories": {
+    "test": "test"
+  }
+}
